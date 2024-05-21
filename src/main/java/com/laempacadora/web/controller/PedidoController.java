@@ -1,5 +1,6 @@
 package com.laempacadora.web.controller;
 
+import com.laempacadora.domain.EstadoPedido;
 import com.laempacadora.domain.service.PedidoService;
 import com.laempacadora.persistence.entity.Empleado;
 import com.laempacadora.persistence.entity.Pedido;
@@ -8,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -21,6 +23,13 @@ public class PedidoController {
     public ResponseEntity<List<Pedido>> getAll()
     {
         return new ResponseEntity<>(pedidoService.getAll(), HttpStatus.OK);
+    }
+
+    @GetMapping("/Estado/{estado}")
+    public List<Pedido> getPedidoEstado(@PathVariable EstadoPedido estado)
+    {
+        LocalDate fecha = LocalDate.now();
+        return pedidoService.getPedidoEstado(estado, fecha);
     }
 
     @GetMapping("/{id}")
@@ -41,6 +50,16 @@ public class PedidoController {
         if(pedidoService.getPedido(pedido.getIdPedido()).isPresent())
         {
             return new ResponseEntity<>(pedidoService.updateFinalPrice(pedido),HttpStatus.ACCEPTED);
+        }
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
+    @PutMapping("/updateState")
+    public ResponseEntity<Pedido> updateEstado(@RequestBody Pedido pedido)
+    {
+        if(pedidoService.getPedido(pedido.getIdPedido()).isPresent())
+        {
+            return new ResponseEntity<>(pedidoService.updateEstado(pedido), HttpStatus.ACCEPTED);
         }
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }

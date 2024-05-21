@@ -1,10 +1,12 @@
 package com.laempacadora.domain.service;
 
+import com.laempacadora.domain.EstadoPedido;
 import com.laempacadora.persistence.PedidoRepository;
 import com.laempacadora.persistence.entity.Pedido;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -16,6 +18,11 @@ public class PedidoService {
     public List<Pedido> getAll()
     {
         return pedidoRepository.getAll();
+    }
+
+    public List<Pedido> getPedidoEstado(EstadoPedido estdoPedido, LocalDate fecha)
+    {
+        return pedidoRepository.getPedidoEstado(estdoPedido, fecha);
     }
 
     public Optional<Pedido> getPedido(int idPedido)
@@ -54,5 +61,10 @@ public class PedidoService {
     public Pedido updateFinalPrice(Pedido pedido)
     {
         return pedidoRepository.updateFinalPrice(pedido);
+    }
+
+    public Pedido updateEstado(Pedido pedido)
+    {
+        return pedidoRepository.updateEstado(pedido);
     }
 }
