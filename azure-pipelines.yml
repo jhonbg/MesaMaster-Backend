@@ -1,23 +1,30 @@
-# Gradle
-# Build your Java project and run tests with Gradle using a Gradle wrapper script.
-# Add steps that analyze code, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/java
-
 trigger:
-- main
+- main  # Desencadenar la canalización cuando se realicen cambios en la rama main
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: 'ubuntu-latest'
 
 steps:
 - task: Gradle@2
+  displayName: 'Gradle Authenticate'
   inputs:
-    workingDirectory: ''
     gradleWrapperFile: 'gradlew'
-    gradleOptions: '-Xmx3072m'
-    javaHomeOption: 'JDKVersion'
-    jdkVersionOption: '1.8'
-    jdkArchitectureOption: 'x64'
-    publishJUnitResults: true
-    testResultsFiles: '**/TEST-*.xml'
-    tasks: 'build'
+    options: '-B'
+    tasks: 'wrapper'
+
+- script: './gradlew clean build'
+  displayName: 'Gradle Build'
+  workingDirectory: '$(System.DefaultWorkingDirectory)'  # Reemplaza '$(System.DefaultWorkingDirectory)/path/to/your/project' con la ruta a tu proyecto
+
+- script: './gradlew test'
+  displayName: 'Run Unit Tests'
+  workingDirectory: '$(System.DefaultWorkingDirectory)'  # Reemplaza '$(System.DefaultWorkingDirectory)/path/to/your/project' con la ruta a tu proyecto
+
+- script: './gradlew bootJar'
+  displayName: 'Package Application (JAR)'
+  workingDirectory: '$(System.DefaultWorkingDirectory)'  # Reemplaza '$(System.DefaultWorkingDirectory)/path/to/your/project' con la ruta a tu proyecto
+
+- task: PublishPipelineArtifact@1
+  displayName: 'Publish Artifact'
+  inputs:
+    targetPath: '$(System.DefaultWorkingDirectory)/build/libs/*.jar'  # Reemplaza '$(System.DefaultWorkingDirectory)/path/to/your/project/build/libs/*.jar' con la ruta al archivo JAR generado
