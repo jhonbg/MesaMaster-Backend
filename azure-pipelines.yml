@@ -1,10 +1,16 @@
 trigger:
-- main  # Desencadenar la canalización cuando se realicen cambios en la rama main
+- main
 
 pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+- script: |
+    echo "Setting execute permissions for gradlew..."
+    chmod +x gradlew
+  displayName: 'Set execute permissions for gradlew'
+  workingDirectory: '$(System.DefaultWorkingDirectory)'
+
 - script: |
     echo "Verifying Gradle Wrapper Configuration..."
     ls -l gradlew
