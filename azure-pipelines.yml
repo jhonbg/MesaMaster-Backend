@@ -5,6 +5,13 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+- script: |
+    echo "Verifying Gradle Wrapper Configuration..."
+    ls -l gradlew
+    ./gradlew --version
+  displayName: 'Verify Gradle Wrapper Configuration'
+  workingDirectory: '$(System.DefaultWorkingDirectory)'
+
 - task: Gradle@2
   displayName: 'Gradle Authenticate'
   inputs:
