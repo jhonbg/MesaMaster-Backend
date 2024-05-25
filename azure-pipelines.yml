@@ -18,13 +18,6 @@ steps:
   displayName: 'Verify Gradle Wrapper Configuration'
   workingDirectory: '$(System.DefaultWorkingDirectory)'
 
-- task: Gradle@2
-  displayName: 'Gradle Authenticate'
-  inputs:
-    gradleWrapperFile: 'gradlew'
-    options: '-B'
-    tasks: 'wrapper'
-
 - script: './gradlew clean build'
   displayName: 'Gradle Build'
   workingDirectory: '$(System.DefaultWorkingDirectory)'  # Reemplaza '$(System.DefaultWorkingDirectory)/path/to/your/project' con la ruta a tu proyecto
