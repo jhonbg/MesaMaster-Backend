@@ -41,13 +41,6 @@ public class ProductoService {
         }).orElse(false);
     }
 
-    public boolean exists(int idProducto)
-    {
-        boolean exists;
-        exists = productoRepository.getProducto(idProducto).isPresent();
-        return exists;
-    }
-
     public Producto update(Producto producto)
     {
         return productoRepository.update(producto);

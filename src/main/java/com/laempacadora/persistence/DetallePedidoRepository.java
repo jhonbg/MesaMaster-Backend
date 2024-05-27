@@ -20,7 +20,7 @@ public class DetallePedidoRepository {
 
     public List<DetallePedido> getPedido(int idPedido)
     {
-        return (List<DetallePedido>) detallePedidoCrudRepository.findAllByIdPedido(idPedido);
+        return detallePedidoCrudRepository.findAllByIdPedido(idPedido);
     }
 
     public Optional<DetallePedido> getDetallePedido(int idDetallePedido)
