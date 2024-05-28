@@ -5,32 +5,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- script: |
-    echo "Setting execute permissions for gradlew..."
-    chmod +x gradlew
-  displayName: 'Set execute permissions for gradlew'
-  workingDirectory: '$(System.DefaultWorkingDirectory)'
-
-- script: |
-    echo "Verifying Gradle Wrapper Configuration..."
-    ls -l gradlew
-    ./gradlew --version
-  displayName: 'Verify Gradle Wrapper Configuration'
-  workingDirectory: '$(System.DefaultWorkingDirectory)'
-
-- script: './gradlew clean build'
-  displayName: 'Gradle Build'
-  workingDirectory: '$(System.DefaultWorkingDirectory)'  # Reemplaza '$(System.DefaultWorkingDirectory)/path/to/your/project' con la ruta a tu proyecto
-
-- script: './gradlew test'
-  displayName: 'Run Unit Tests'
-  workingDirectory: '$(System.DefaultWorkingDirectory)'  # Reemplaza '$(System.DefaultWorkingDirectory)/path/to/your/project' con la ruta a tu proyecto
-
-- script: './gradlew bootJar'
-  displayName: 'Package Application (JAR)'
-  workingDirectory: '$(System.DefaultWorkingDirectory)'  # Reemplaza '$(System.DefaultWorkingDirectory)/path/to/your/project' con la ruta a tu proyecto
-
-- task: PublishPipelineArtifact@1
-  displayName: 'Publish Artifact'
+- task: Gradle@2
   inputs:
-    targetPath: '$(System.DefaultWorkingDirectory)/build/libs/*.jar'  # Reemplaza '$(System.DefaultWorkingDirectory)/path/to/your/project/build/libs/*.jar' con la ruta al archivo JAR generado
+    gradleWrapperFile: 'gradlew'
+    tasks: 'build'
