@@ -14,7 +14,9 @@ public class CorsConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("http://localhost:3000")
+                        .allowedOrigins("http://localhost:3000",
+                                "https://mesa-master-rebah52ae-jhonbgs-projects.vercel.app",
+                                "https://mesa-master.vercel.app")
                         .allowedMethods("*") // Permitir todos los métodos
                         .allowedHeaders("X-CSRF-Token", "X-Requested-With", "Accept", "Accept-Version", "Content-Length", "Content-MD5", "Content-Type", "Date", "X-Api-Version")
                         .allowCredentials(true)
