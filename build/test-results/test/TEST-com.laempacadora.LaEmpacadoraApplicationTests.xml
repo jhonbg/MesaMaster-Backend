@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.laempacadora.LaEmpacadoraApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-05-31T05:12:02" hostname="DESKTOP-B4QCPPI" time="0.418">
+<testsuite name="com.laempacadora.LaEmpacadoraApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-05-31T05:14:54" hostname="DESKTOP-B4QCPPI" time="0.397">
   <properties/>
-  <testcase name="contextLoads()" classname="com.laempacadora.LaEmpacadoraApplicationTests" time="0.418"/>
-  <system-out><![CDATA[00:11:56.563 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.laempacadora.LaEmpacadoraApplicationTests]: LaEmpacadoraApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-00:11:56.668 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.laempacadora.LaEmpacadoraApplication for test class com.laempacadora.LaEmpacadoraApplicationTests
+  <testcase name="contextLoads()" classname="com.laempacadora.LaEmpacadoraApplicationTests" time="0.397"/>
+  <system-out><![CDATA[00:14:48.635 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.laempacadora.LaEmpacadoraApplicationTests]: LaEmpacadoraApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+00:14:48.714 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.laempacadora.LaEmpacadoraApplication for test class com.laempacadora.LaEmpacadoraApplicationTests
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -13,24 +13,24 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.1.9)
 
-2024-05-31T00:11:56.978-05:00  INFO 15480 --- [    Test worker] c.l.LaEmpacadoraApplicationTests         : Starting LaEmpacadoraApplicationTests using Java 17.0.11 with PID 15480 (started by Usuario in D:\Desktop\Materias\Proyecto Integrador 1\MesaMaster-Backend)
-2024-05-31T00:11:56.979-05:00  INFO 15480 --- [    Test worker] c.l.LaEmpacadoraApplicationTests         : The following 1 profile is active: "pdn"
-2024-05-31T00:11:57.553-05:00  INFO 15480 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-05-31T00:11:57.612-05:00  INFO 15480 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 53 ms. Found 5 JPA repository interfaces.
-2024-05-31T00:11:57.961-05:00  INFO 15480 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-05-31T00:11:59.120-05:00  INFO 15480 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4b28a7bf
-2024-05-31T00:11:59.121-05:00  INFO 15480 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-05-31T00:11:59.164-05:00  INFO 15480 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-05-31T00:11:59.214-05:00  INFO 15480 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.22.Final
-2024-05-31T00:11:59.217-05:00  INFO 15480 --- [    Test worker] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2024-05-31T00:11:59.483-05:00  INFO 15480 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-05-31T00:11:59.625-05:00  WARN 15480 --- [    Test worker] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-05-31T00:12:00.667-05:00  INFO 15480 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-05-31T00:12:00.671-05:00  INFO 15480 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-05-31T00:12:01.077-05:00  INFO 15480 --- [    Test worker] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-05-31T00:12:01.571-05:00  WARN 15480 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-05-31T00:12:02.521-05:00  INFO 15480 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1743c249, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2531049f, org.springframework.security.web.context.SecurityContextHolderFilter@2f4a89fa, org.springframework.security.web.header.HeaderWriterFilter@6fe47be, org.springframework.security.web.authentication.logout.LogoutFilter@1e3f0c5c, com.laempacadora.jwt.JwtAuthenticationFilter@749ffdc7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@45c3cf0c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1911427a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@14404be2, org.springframework.security.web.session.SessionManagementFilter@2baf2c6, org.springframework.security.web.access.ExceptionTranslationFilter@1cd50433, org.springframework.security.web.access.intercept.AuthorizationFilter@38e1442a]
-2024-05-31T00:12:02.830-05:00  INFO 15480 --- [    Test worker] c.l.LaEmpacadoraApplicationTests         : Started LaEmpacadoraApplicationTests in 6.042 seconds (process running for 7.199)
+2024-05-31T00:14:49.061-05:00  INFO 5340 --- [    Test worker] c.l.LaEmpacadoraApplicationTests         : Starting LaEmpacadoraApplicationTests using Java 17.0.11 with PID 5340 (started by Usuario in D:\Desktop\Materias\Proyecto Integrador 1\MesaMaster-Backend)
+2024-05-31T00:14:49.063-05:00  INFO 5340 --- [    Test worker] c.l.LaEmpacadoraApplicationTests         : The following 1 profile is active: "pdn"
+2024-05-31T00:14:49.661-05:00  INFO 5340 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-31T00:14:49.718-05:00  INFO 5340 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51 ms. Found 5 JPA repository interfaces.
+2024-05-31T00:14:50.070-05:00  INFO 5340 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-31T00:14:51.232-05:00  INFO 5340 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@19526f1d
+2024-05-31T00:14:51.232-05:00  INFO 5340 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-31T00:14:51.263-05:00  INFO 5340 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-31T00:14:51.310-05:00  INFO 5340 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.22.Final
+2024-05-31T00:14:51.310-05:00  INFO 5340 --- [    Test worker] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2024-05-31T00:14:51.575-05:00  INFO 5340 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-31T00:14:51.716-05:00  WARN 5340 --- [    Test worker] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-31T00:14:52.704-05:00  INFO 5340 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-31T00:14:52.720-05:00  INFO 5340 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-31T00:14:53.095-05:00  INFO 5340 --- [    Test worker] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-05-31T00:14:53.583-05:00  WARN 5340 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-31T00:14:54.400-05:00  INFO 5340 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@666033b1, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@db9ecd, org.springframework.security.web.context.SecurityContextHolderFilter@106a6420, org.springframework.security.web.header.HeaderWriterFilter@6999dca2, org.springframework.security.web.authentication.logout.LogoutFilter@62e7e3df, com.laempacadora.jwt.JwtAuthenticationFilter@414d466e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5fe1b8d2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2baf2c6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@23ac164d, org.springframework.security.web.session.SessionManagementFilter@53a4637c, org.springframework.security.web.access.ExceptionTranslationFilter@1bb1ba54, org.springframework.security.web.access.intercept.AuthorizationFilter@1e3f0c5c]
+2024-05-31T00:14:54.734-05:00  INFO 5340 --- [    Test worker] c.l.LaEmpacadoraApplicationTests         : Started LaEmpacadoraApplicationTests in 5.89 seconds (process running for 6.743)
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
