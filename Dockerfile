@@ -26,6 +26,6 @@
 #EXPOSE 8080
 FROM amazoncorretto:17-alpine-jdk
 
-COPY ./build/libs/LaEmpacadora-0.0.1-SNAPSHOT.jar app.jar
+COPY ./build/libs/mesamaster.jar app.jar
 
 ENTRYPOINT ["java", "-jar", "/app.jar"]
